@@ -1,0 +1,25 @@
+This is a simple test program to investigate ecryptfs vs. fanotify.
+
+The program is a 5 thread single-process fanotify 'scanner' set up to cover / and the ecryptfs home
+dir under test.
+
+To use:
+1. Alter .cpp to set your ecryptfs homedir.
+2. Compile using makefile.
+3. Run program.
+4. Run firefox.
+5. Use Firefox.
+
+If Firefox goes grey/gray then you have triggered the problem.
+The Scanner output will indicate that 2 threads are blocked in stage 4 - before read(),
+they will remain, and the scanner process and Firefox will be stuck in memory.
+(Reboot to clear).
+
+I've always seen two threads get stuck (in Firefox and the Scanner), rather than 1 or 3 for example.
+This leads me to think there is a dead-lock going on.
+Each ecryptfs file access causes two fanotify file events - one for the decrypted file on ecryptfs,
+and one for the encrypted file on the host fs.
+
+fanotify can deliver multiple file events in a single read from the fanotify fd, so I wonder if 
+each thread is trying to construct events for decrypted files that are waiting for the other thread to complete on the
+encrypted files.
