@@ -1,0 +1,123 @@
+[  121.355286] Valid eCryptfs headers not found in file header region or xattr region, inode 12601898
+[  121.355290] Either the lower file is not in a valid eCryptfs format, or the key could not be retrieved. Plaintext passthrough mode is not enabled; returning -EIO
+[  121.418324] Valid eCryptfs headers not found in file header region or xattr region, inode 8798169
+[  121.418328] Either the lower file is not in a valid eCryptfs format, or the key could not be retrieved. Plaintext passthrough mode is not enabled; returning -EIO
+[ 5625.269686] INFO: task FanotifyMultiTh:9341 blocked for more than 120 seconds.
+[ 5625.269691] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 5625.269694] FanotifyMultiTh D 0000000000000002     0  9341   7833 0x00020004
+[ 5625.269699]  ffff8801555ffbd8 0000000000000086 0000000000000082 0000000000000006
+[ 5625.269705]  ffff8801555fffd8 ffff8801555fffd8 ffff8801555fffd8 0000000000013780
+[ 5625.269710]  ffff88022b58dbc0 ffff88020ea65bc0 ffff8801555ffbd8 ffff880212e8dff0
+[ 5625.269715] Call Trace:
+[ 5625.269724]  [<ffffffff81657d8f>] schedule+0x3f/0x60
+[ 5625.269730]  [<ffffffff81658b97>] __mutex_lock_slowpath+0xd7/0x150
+[ 5625.269737]  [<ffffffff810500fd>] ? ttwu_do_wakeup+0x3d/0x120
+[ 5625.269741]  [<ffffffff816587aa>] mutex_lock+0x2a/0x50
+[ 5625.269747]  [<ffffffff8126d586>] ecryptfs_get_lower_file+0x36/0x120
+[ 5625.269752]  [<ffffffff8126a7d0>] ecryptfs_open+0xa0/0x2a0
+[ 5625.269758]  [<ffffffff81175d50>] __dentry_open+0x290/0x360
+[ 5625.269762]  [<ffffffff8126a730>] ? ecryptfs_release+0x40/0x40
+[ 5625.269767]  [<ffffffff812d6bcc>] ? apparmor_file_alloc_security+0x2c/0x60
+[ 5625.269771]  [<ffffffff811763cd>] vfs_open+0x3d/0x40
+[ 5625.269774]  [<ffffffff8117641e>] dentry_open+0x4e/0x70
+[ 5625.269779]  [<ffffffff811bac44>] create_fd.isra.0+0xc4/0x120
+[ 5625.269782]  [<ffffffff811bad0e>] copy_event_to_user+0x6e/0x170
+[ 5625.269786]  [<ffffffff811baf7e>] fanotify_read+0x16e/0x1d0
+[ 5625.269791]  [<ffffffff8108b020>] ? add_wait_queue+0x60/0x60
+[ 5625.269795]  [<ffffffff811781e0>] vfs_read+0xb0/0x180
+[ 5625.269798]  [<ffffffff811782fa>] sys_read+0x4a/0x90
+[ 5625.269804]  [<ffffffff810b6465>] ? compat_sys_time+0x25/0x60
+[ 5625.269809]  [<ffffffff81664730>] sysenter_dispatch+0x7/0x2e
+[ 5744.927570] INFO: task FanotifyMultiTh:9340 blocked for more than 120 seconds.
+[ 5744.927575] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 5744.927578] FanotifyMultiTh D ffffffff81806080     0  9340   7833 0x00020004
+[ 5744.927584]  ffff880122101968 0000000000000086 ffff880122101998 0000000300000001
+[ 5744.927590]  ffff880122101fd8 ffff880122101fd8 ffff880122101fd8 0000000000013780
+[ 5744.927595]  ffff8802309c96f0 ffff88020ea62de0 ffff880122101978 ffff8801f7eb6db0
+[ 5744.927600] Call Trace:
+[ 5744.927609]  [<ffffffff81657d8f>] schedule+0x3f/0x60
+[ 5744.927614]  [<ffffffff811b9fa9>] fanotify_get_response_from_access+0xb9/0x100
+[ 5744.927620]  [<ffffffff8108b020>] ? add_wait_queue+0x60/0x60
+[ 5744.927624]  [<ffffffff811ba072>] fanotify_handle_event+0x82/0x90
+[ 5744.927629]  [<ffffffff811b644a>] send_to_group.isra.1+0x13a/0x190
+[ 5744.927634]  [<ffffffff811b6603>] fsnotify+0x163/0x2a0
+[ 5744.927639]  [<ffffffff8129dd29>] security_dentry_open+0x79/0x80
+[ 5744.927645]  [<ffffffff81175bcc>] __dentry_open+0x10c/0x360
+[ 5744.927650]  [<ffffffff812d6bcc>] ? apparmor_file_alloc_security+0x2c/0x60
+[ 5744.927654]  [<ffffffff811763cd>] vfs_open+0x3d/0x40
+[ 5744.927657]  [<ffffffff8117641e>] dentry_open+0x4e/0x70
+[ 5744.927662]  [<ffffffff812770ff>] ecryptfs_privileged_open+0x7f/0x280
+[ 5744.927667]  [<ffffffff8104dea3>] ? __wake_up+0x53/0x70
+[ 5744.927672]  [<ffffffff8126d5fd>] ecryptfs_get_lower_file+0xad/0x120
+[ 5744.927677]  [<ffffffff8126a7d0>] ecryptfs_open+0xa0/0x2a0
+[ 5744.927681]  [<ffffffff81175d50>] __dentry_open+0x290/0x360
+[ 5744.927685]  [<ffffffff8126a730>] ? ecryptfs_release+0x40/0x40
+[ 5744.927689]  [<ffffffff812d6bcc>] ? apparmor_file_alloc_security+0x2c/0x60
+[ 5744.927692]  [<ffffffff811763cd>] vfs_open+0x3d/0x40
+[ 5744.927695]  [<ffffffff8117641e>] dentry_open+0x4e/0x70
+[ 5744.927699]  [<ffffffff811bac44>] create_fd.isra.0+0xc4/0x120
+[ 5744.927703]  [<ffffffff811bad0e>] copy_event_to_user+0x6e/0x170
+[ 5744.927707]  [<ffffffff811baf7e>] fanotify_read+0x16e/0x1d0
+[ 5744.927711]  [<ffffffff8101a779>] ? read_tsc+0x9/0x20
+[ 5744.927715]  [<ffffffff8108b020>] ? add_wait_queue+0x60/0x60
+[ 5744.927719]  [<ffffffff811781e0>] vfs_read+0xb0/0x180
+[ 5744.927722]  [<ffffffff811782fa>] sys_read+0x4a/0x90
+[ 5744.927728]  [<ffffffff810b6465>] ? compat_sys_time+0x25/0x60
+[ 5744.927733]  [<ffffffff81664730>] sysenter_dispatch+0x7/0x2e
+[ 5744.927736] INFO: task FanotifyMultiTh:9341 blocked for more than 120 seconds.
+[ 5744.927738] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 5744.927740] FanotifyMultiTh D 0000000000000002     0  9341   7833 0x00020004
+[ 5744.927745]  ffff8801555ffbd8 0000000000000086 0000000000000082 0000000000000006
+[ 5744.927750]  ffff8801555fffd8 ffff8801555fffd8 ffff8801555fffd8 0000000000013780
+[ 5744.927754]  ffff88022b58dbc0 ffff88020ea65bc0 ffff8801555ffbd8 ffff880212e8dff0
+[ 5744.927759] Call Trace:
+[ 5744.927763]  [<ffffffff81657d8f>] schedule+0x3f/0x60
+[ 5744.927768]  [<ffffffff81658b97>] __mutex_lock_slowpath+0xd7/0x150
+[ 5744.927773]  [<ffffffff810500fd>] ? ttwu_do_wakeup+0x3d/0x120
+[ 5744.927778]  [<ffffffff816587aa>] mutex_lock+0x2a/0x50
+[ 5744.927782]  [<ffffffff8126d586>] ecryptfs_get_lower_file+0x36/0x120
+[ 5744.927786]  [<ffffffff8126a7d0>] ecryptfs_open+0xa0/0x2a0
+[ 5744.927791]  [<ffffffff81175d50>] __dentry_open+0x290/0x360
+[ 5744.927795]  [<ffffffff8126a730>] ? ecryptfs_release+0x40/0x40
+[ 5744.927799]  [<ffffffff812d6bcc>] ? apparmor_file_alloc_security+0x2c/0x60
+[ 5744.927802]  [<ffffffff811763cd>] vfs_open+0x3d/0x40
+[ 5744.927805]  [<ffffffff8117641e>] dentry_open+0x4e/0x70
+[ 5744.927808]  [<ffffffff811bac44>] create_fd.isra.0+0xc4/0x120
+[ 5744.927812]  [<ffffffff811bad0e>] copy_event_to_user+0x6e/0x170
+[ 5744.927816]  [<ffffffff811baf7e>] fanotify_read+0x16e/0x1d0
+[ 5744.927819]  [<ffffffff8108b020>] ? add_wait_queue+0x60/0x60
+[ 5744.927823]  [<ffffffff811781e0>] vfs_read+0xb0/0x180
+[ 5744.927826]  [<ffffffff811782fa>] sys_read+0x4a/0x90
+[ 5744.927830]  [<ffffffff810b6465>] ? compat_sys_time+0x25/0x60
+[ 5744.927834]  [<ffffffff81664730>] sysenter_dispatch+0x7/0x2e
+[ 5744.927839] INFO: task firefox:9390 blocked for more than 120 seconds.
+[ 5744.927841] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 5744.927844] firefox         D ffffffff81806080     0  9390      1 0x00000000
+[ 5744.927848]  ffff88012e769ab8 0000000000000086 ffff88012e769aa8 0000000300000001
+[ 5744.927853]  ffff88012e769fd8 ffff88012e769fd8 ffff88012e769fd8 0000000000013780
+[ 5744.927857]  ffff8802304916f0 ffff8801f7d55bc0 ffff88012e769ac8 ffff8801f7eb6db0
+[ 5744.927862] Call Trace:
+[ 5744.927866]  [<ffffffff81657d8f>] schedule+0x3f/0x60
+[ 5744.927870]  [<ffffffff811b9fa9>] fanotify_get_response_from_access+0xb9/0x100
+[ 5744.927874]  [<ffffffff8108b020>] ? add_wait_queue+0x60/0x60
+[ 5744.927877]  [<ffffffff811ba072>] fanotify_handle_event+0x82/0x90
+[ 5744.927882]  [<ffffffff811b644a>] send_to_group.isra.1+0x13a/0x190
+[ 5744.927887]  [<ffffffff811b6603>] fsnotify+0x163/0x2a0
+[ 5744.927891]  [<ffffffff8129dd29>] security_dentry_open+0x79/0x80
+[ 5744.927895]  [<ffffffff81175bcc>] __dentry_open+0x10c/0x360
+[ 5744.927899]  [<ffffffff8129cd0c>] ? security_inode_permission+0x1c/0x30
+[ 5744.927903]  [<ffffffff811839da>] ? inode_permission+0x4a/0x110
+[ 5744.927906]  [<ffffffff811763cd>] vfs_open+0x3d/0x40
+[ 5744.927910]  [<ffffffff811772a0>] nameidata_to_filp+0x40/0x50
+[ 5744.927913]  [<ffffffff81186218>] do_last+0x3f8/0x730
+[ 5744.927917]  [<ffffffff811878f1>] path_openat+0xd1/0x3f0
+[ 5744.927922]  [<ffffffff811624e4>] ? kfree+0x114/0x140
+[ 5744.927926]  [<ffffffff81187d32>] do_filp_open+0x42/0xa0
+[ 5744.927932]  [<ffffffff81319281>] ? strncpy_from_user+0x31/0x40
+[ 5744.927935]  [<ffffffff8118307a>] ? do_getname+0x10a/0x180
+[ 5744.927939]  [<ffffffff81659c9e>] ? _raw_spin_lock+0xe/0x20
+[ 5744.927943]  [<ffffffff81195017>] ? alloc_fd+0xf7/0x150
+[ 5744.927946]  [<ffffffff8117739d>] do_sys_open+0xed/0x220
+[ 5744.927950]  [<ffffffff811795a5>] ? fput+0x25/0x30
+[ 5744.927953]  [<ffffffff811774f0>] sys_open+0x20/0x30
+[ 5744.927957]  [<ffffffff81662282>] system_call_fastpath+0x16/0x1b
