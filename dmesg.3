@@ -1,0 +1,107 @@
+[ 1078.263702] INFO: task FanotifyMultiTh:3694 blocked for more than 120 seconds.
+[ 1078.263704] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 1078.263706] FanotifyMultiTh D ffff8801ef5503c0     0  3694   2938 0x00020004
+[ 1078.263709]  ffff8801e64d7c48 0000000000000086 ffff880100000000 0000000000000000
+[ 1078.263712]  ffff8801ef550000 ffff8801e64d7fd8 ffff8801e64d7fd8 ffff8801e64d7fd8
+[ 1078.263714]  ffff8802304716f0 ffff8801ef550000 ffff8801ef550000 000000013e3d3780
+[ 1078.263716] Call Trace:
+[ 1078.263722]  [<ffffffff8161366f>] schedule+0x3f/0x60
+[ 1078.263724]  [<ffffffff81614477>] __mutex_lock_slowpath+0xd7/0x150
+[ 1078.263725]  [<ffffffff8161408a>] mutex_lock+0x2a/0x50
+[ 1078.263728]  [<ffffffff81268296>] ecryptfs_get_lower_file+0x36/0x120
+[ 1078.263730]  [<ffffffff81265590>] ecryptfs_open+0xa0/0x2a0
+[ 1078.263733]  [<ffffffff8116ef10>] __dentry_open+0x290/0x360
+[ 1078.263734]  [<ffffffff812654f0>] ? ecryptfs_release+0x40/0x40
+[ 1078.263737]  [<ffffffff812d186c>] ? apparmor_file_alloc_security+0x2c/0x60
+[ 1078.263739]  [<ffffffff8116f58d>] vfs_open+0x3d/0x40
+[ 1078.263741]  [<ffffffff8116f5de>] dentry_open+0x4e/0x70
+[ 1078.263743]  [<ffffffff811b3246>] fanotify_read+0x2c6/0x510
+[ 1078.263746]  [<ffffffff81089180>] ? add_wait_queue+0x60/0x60
+[ 1078.263747]  [<ffffffff811713b0>] vfs_read+0xb0/0x180
+[ 1078.263749]  [<ffffffff811714ca>] sys_read+0x4a/0x90
+[ 1078.263752]  [<ffffffff810b3ee5>] ? compat_sys_time+0x25/0x60
+[ 1078.263754]  [<ffffffff8161fb70>] sysenter_dispatch+0x7/0x2e
+[ 1079.389316] non-accessible hardlink creation was attempted by: ln (fsuid 1000)
+[ 1197.921863] INFO: task FanotifyMultiTh:3694 blocked for more than 120 seconds.
+[ 1197.921869] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 1197.921874] FanotifyMultiTh D ffff8801ef5503c0     0  3694   2938 0x00020004
+[ 1197.921882]  ffff8801e64d7c48 0000000000000086 ffff880100000000 0000000000000000
+[ 1197.921891]  ffff8801ef550000 ffff8801e64d7fd8 ffff8801e64d7fd8 ffff8801e64d7fd8
+[ 1197.921898]  ffff8802304716f0 ffff8801ef550000 ffff8801ef550000 000000013e3d3780
+[ 1197.921906] Call Trace:
+[ 1197.921917]  [<ffffffff8161366f>] schedule+0x3f/0x60
+[ 1197.921923]  [<ffffffff81614477>] __mutex_lock_slowpath+0xd7/0x150
+[ 1197.921928]  [<ffffffff8161408a>] mutex_lock+0x2a/0x50
+[ 1197.921935]  [<ffffffff81268296>] ecryptfs_get_lower_file+0x36/0x120
+[ 1197.921940]  [<ffffffff81265590>] ecryptfs_open+0xa0/0x2a0
+[ 1197.921946]  [<ffffffff8116ef10>] __dentry_open+0x290/0x360
+[ 1197.921951]  [<ffffffff812654f0>] ? ecryptfs_release+0x40/0x40
+[ 1197.921958]  [<ffffffff812d186c>] ? apparmor_file_alloc_security+0x2c/0x60
+[ 1197.921964]  [<ffffffff8116f58d>] vfs_open+0x3d/0x40
+[ 1197.921968]  [<ffffffff8116f5de>] dentry_open+0x4e/0x70
+[ 1197.921974]  [<ffffffff811b3246>] fanotify_read+0x2c6/0x510
+[ 1197.921981]  [<ffffffff81089180>] ? add_wait_queue+0x60/0x60
+[ 1197.921987]  [<ffffffff811713b0>] vfs_read+0xb0/0x180
+[ 1197.921992]  [<ffffffff811714ca>] sys_read+0x4a/0x90
+[ 1197.921999]  [<ffffffff810b3ee5>] ? compat_sys_time+0x25/0x60
+[ 1197.922004]  [<ffffffff8161fb70>] sysenter_dispatch+0x7/0x2e
+[ 1197.922008] INFO: task FanotifyMultiTh:3695 blocked for more than 120 seconds.
+[ 1197.922010] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 1197.922013] FanotifyMultiTh D ffff8801ef555f80     0  3695   2938 0x00020004
+[ 1197.922017]  ffff8801ed08ba08 0000000000000086 ffff880100000000 ffff88022d4e6438
+[ 1197.922022]  ffff8801ef555bc0 ffff8801ed08bfd8 ffff8801ed08bfd8 ffff8801ed08bfd8
+[ 1197.922027]  ffff8802304716f0 ffff8801ef555bc0 0000000000000282 000000012fb134b0
+[ 1197.922031] Call Trace:
+[ 1197.922036]  [<ffffffff8161366f>] schedule+0x3f/0x60
+[ 1197.922042]  [<ffffffff811b28b9>] fanotify_handle_event+0x119/0x160
+[ 1197.922046]  [<ffffffff81089180>] ? add_wait_queue+0x60/0x60
+[ 1197.922050]  [<ffffffff811aedda>] send_to_group.isra.1+0x13a/0x190
+[ 1197.922055]  [<ffffffff81183e80>] ? poll_freewait+0xe0/0xe0
+[ 1197.922059]  [<ffffffff811aef93>] fsnotify+0x163/0x2a0
+[ 1197.922065]  [<ffffffff81298229>] security_dentry_open+0x79/0x80
+[ 1197.922068]  [<ffffffff8116ed8c>] __dentry_open+0x10c/0x360
+[ 1197.922073]  [<ffffffff812d186c>] ? apparmor_file_alloc_security+0x2c/0x60
+[ 1197.922076]  [<ffffffff8116f58d>] vfs_open+0x3d/0x40
+[ 1197.922080]  [<ffffffff8116f5de>] dentry_open+0x4e/0x70
+[ 1197.922084]  [<ffffffff811b2900>] ? fanotify_handle_event+0x160/0x160
+[ 1197.922089]  [<ffffffff81271805>] ecryptfs_privileged_open+0x85/0x290
+[ 1197.922093]  [<ffffffff8126830d>] ecryptfs_get_lower_file+0xad/0x120
+[ 1197.922097]  [<ffffffff81265590>] ecryptfs_open+0xa0/0x2a0
+[ 1197.922100]  [<ffffffff8116ef10>] __dentry_open+0x290/0x360
+[ 1197.922104]  [<ffffffff812654f0>] ? ecryptfs_release+0x40/0x40
+[ 1197.922108]  [<ffffffff812d186c>] ? apparmor_file_alloc_security+0x2c/0x60
+[ 1197.922111]  [<ffffffff8116f58d>] vfs_open+0x3d/0x40
+[ 1197.922115]  [<ffffffff8116f5de>] dentry_open+0x4e/0x70
+[ 1197.922118]  [<ffffffff811b3246>] fanotify_read+0x2c6/0x510
+[ 1197.922122]  [<ffffffff81089180>] ? add_wait_queue+0x60/0x60
+[ 1197.922126]  [<ffffffff811713b0>] vfs_read+0xb0/0x180
+[ 1197.922129]  [<ffffffff811714ca>] sys_read+0x4a/0x90
+[ 1197.922133]  [<ffffffff810b3ee5>] ? compat_sys_time+0x25/0x60
+[ 1197.922137]  [<ffffffff8161fb70>] sysenter_dispatch+0x7/0x2e
+[ 1197.922142] INFO: task firefox:3731 blocked for more than 120 seconds.
+[ 1197.922144] "echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
+[ 1197.922147] firefox         D ffff88022d4283c0     0  3731   2760 0x00000000
+[ 1197.922151]  ffff8801ef5a3ae8 0000000000000082 ffff880100000000 ffff88020f2c20f0
+[ 1197.922156]  ffff88022d428000 ffff8801ef5a3fd8 ffff8801ef5a3fd8 ffff8801ef5a3fd8
+[ 1197.922160]  ffffffff81c0d020 ffff88022d428000 0000000000000282 000000012fb134b0
+[ 1197.922165] Call Trace:
+[ 1197.922169]  [<ffffffff8161366f>] schedule+0x3f/0x60
+[ 1197.922174]  [<ffffffff811b28b9>] fanotify_handle_event+0x119/0x160
+[ 1197.922178]  [<ffffffff81089180>] ? add_wait_queue+0x60/0x60
+[ 1197.922182]  [<ffffffff811aedda>] send_to_group.isra.1+0x13a/0x190
+[ 1197.922186]  [<ffffffff811aef93>] fsnotify+0x163/0x2a0
+[ 1197.922191]  [<ffffffff81298229>] security_dentry_open+0x79/0x80
+[ 1197.922194]  [<ffffffff8116ed8c>] __dentry_open+0x10c/0x360
+[ 1197.922198]  [<ffffffff8117cbb8>] ? inode_permission+0x48/0x100
+[ 1197.922202]  [<ffffffff8117c8c2>] ? __lookup_hash.part.28+0x92/0xe0
+[ 1197.922205]  [<ffffffff8116f58d>] vfs_open+0x3d/0x40
+[ 1197.922209]  [<ffffffff81170450>] nameidata_to_filp+0x40/0x50
+[ 1197.922212]  [<ffffffff8117f13c>] do_last+0x26c/0x8f0
+[ 1197.922216]  [<ffffffff81180b61>] path_openat+0xd1/0x3f0
+[ 1197.922220]  [<ffffffff811aedda>] ? send_to_group.isra.1+0x13a/0x190
+[ 1197.922224]  [<ffffffff8115b2bb>] ? kfree+0x3b/0x140
+[ 1197.922228]  [<ffffffff81180fa2>] do_filp_open+0x42/0xa0
+[ 1197.922233]  [<ffffffff8118df37>] ? alloc_fd+0xf7/0x150
+[ 1197.922238]  [<ffffffff8117054d>] do_sys_open+0xed/0x220
+[ 1197.922243]  [<ffffffff811706a0>] sys_open+0x20/0x30
+[ 1197.922248]  [<ffffffff8161d6c2>] system_call_fastpath+0x16/0x1b
